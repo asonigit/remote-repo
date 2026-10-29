@@ -1,0 +1,93 @@
+{
+  "name": "Weekly review",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "weeks",
+              "triggerAtDay": [
+                1
+              ],
+              "triggerAtHour": 9
+            }
+          ]
+        },
+        "misfirePolicy": "coalesce_owner"
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.4,
+      "position": [
+        0,
+        0
+      ],
+      "id": "b376210f-f283-45bb-a90b-ebd8226a600a",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "project": {
+          "__rl": true,
+          "value": "10067",
+          "mode": "list",
+          "cachedResultName": "SA&A Sprints"
+        },
+        "issueType": {
+          "__rl": true,
+          "value": "10046",
+          "mode": "list",
+          "cachedResultName": "Task"
+        },
+        "summary": "Weekly review",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.jira",
+      "typeVersion": 1,
+      "position": [
+        224,
+        0
+      ],
+      "id": "44ee03f1-977d-410d-a8d3-f341d6456981",
+      "name": "Create an issue",
+      "credentials": {
+        "jiraSoftwareCloudApi": {
+          "id": "eHaeBJV8iMU3YQcT",
+          "name": "Jira SW Cloud account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "Create an issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "timezone": "Asia/Kolkata",
+    "callerPolicy": "workflowsFromSameOwner",
+    "executionTimeout": -1,
+    "availableInMCP": false
+  },
+  "versionId": "dd21335b-f3d1-4d5d-be1c-882846f6291e",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "10ea4f907c2278e96e310f1f4a4bd95c9b3d315f94d13bec644cb5a1f6b4f3e6"
+  },
+  "nodeGroups": [],
+  "id": "i6impAhO58dulvpo",
+  "tags": []
+}

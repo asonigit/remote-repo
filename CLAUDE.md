@@ -1,1 +1,0 @@
-never open anything under OneDrive "0. Assignments"; build and test only with files in /samples, which hold synthetic or masked data; ask before installing anything; explain each command before you run it; commit after every change that works.
